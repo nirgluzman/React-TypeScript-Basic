@@ -12,8 +12,18 @@ React with Vite, https://vitejs.dev/guide/
 npm create vite@latest react-ts-basic
 
 
-TypeScript:
+TypeScript - tsconfig.json
 (*) Strict Mode, https://dev.to/jsdev/strict-mode-typescript-j8p
+
+
+------------------------
+TypeScript syntax
+------------------------
+
+Discriminated Unions:
+enables the creation of a type that can represent several different possibilities or variants.
+https://dev.to/darkmavis1980/what-are-typescript-discriminated-unions-5hbb
+
 
 
 FormData - to construct a set of key/value pairs representing form fields and their values.
