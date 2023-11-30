@@ -1,6 +1,10 @@
 import {useRef, type FormEvent} from 'react';
 
-export default function NewGoal() {
+type NewGoalProps = {
+	onAddGoal: (goal: string, summary: string) => void;
+};
+
+export default function NewGoal({onAddGoal}: NewGoalProps) {
 	const goal = useRef<HTMLInputElement>(null); // the defualt init value of useRef() is 'undefined'.
 	const summary = useRef<HTMLInputElement>(null);
 
@@ -9,6 +13,12 @@ export default function NewGoal() {
 
 		const enteredGoal = goal.current!.value;
 		const enteredSummary = summary.current!.value;
+
+		// reseting the fields in the form after extracting the values
+		event.currentTarget.reset();
+
+		// referencing handleAddGoal to save the new values in goals array state.
+		onAddGoal(enteredGoal, enteredSummary);
 	}
 
 	return (
