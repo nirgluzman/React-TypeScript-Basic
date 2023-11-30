@@ -39,6 +39,7 @@ function handleSubmit(event: FormEvent<HTMLFormElement>) {
 
 e.preventDefault() 
 -> to cancel the event if it is cancelable, meaning that the default action that belongs to the event will not occur.
+https://www.udemy.com/course/react-typescript-the-practical-guide/learn/lecture/40470578#questions/20918206
 
 The default behavior depends on the event type. Some examples:
 * When used in a form submit event handler, it prevents the form from being submitted to the server.
