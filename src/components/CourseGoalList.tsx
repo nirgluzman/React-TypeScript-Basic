@@ -11,14 +11,16 @@ type CourseGoalListProps = {
 export default function CourseGoalList({goals, onDeleteGoal}: CourseGoalListProps) {
 	// goals array is empty - no goals have been entered.
 	if (goals.length === 0) {
-		return <InfoBox mode='info'>You have no course goals yet, start adding some!</InfoBox>;
+		return <InfoBox mode='hint'>You have no course goals yet, start adding some!</InfoBox>;
 	}
 
 	let warningBox: ReactNode;
 
 	if (goals.length >= 4) {
 		warningBox = (
-			<InfoBox mode='warning'>
+			<InfoBox
+				mode='warning'
+				severity='low'>
 				You're collecting a lot of goals, don't put too much on your plate!
 			</InfoBox>
 		);
