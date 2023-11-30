@@ -1,11 +1,14 @@
-import {type FormEvent} from 'react';
+import {useRef, type FormEvent} from 'react';
 
 export default function NewGoal() {
+	const goal = useRef<HTMLInputElement>(null); // the defualt init value of useRef() is 'undefined'.
+	const summary = useRef<HTMLInputElement>(null);
+
 	function handleSubmit(event: FormEvent<HTMLFormElement>) {
 		event.preventDefault();
 
-		const formData = new FormData(event.currentTarget); // key/value pairs representing form fields and their values.
-		console.log(formData.get('goal'), formData.get('summary'));
+		const enteredGoal = goal.current!.value;
+		const enteredSummary = summary.current!.value;
 	}
 
 	return (
@@ -16,7 +19,7 @@ export default function NewGoal() {
 				<input
 					id='goal'
 					type='text'
-					name='goal'
+					ref={goal}
 				/>
 			</p>
 			<p>
@@ -24,7 +27,7 @@ export default function NewGoal() {
 				<input
 					id='summary'
 					type='text'
-					name='summary'
+					ref={summary}
 				/>
 			</p>
 			<p>
