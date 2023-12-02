@@ -5,7 +5,7 @@ type NewGoalProps = {
 };
 
 export default function NewGoal({onAddGoal}: NewGoalProps) {
-	const goal = useRef<HTMLInputElement>(null); // the defualt init value of useRef() is 'undefined'.
+	const goal = useRef<HTMLInputElement>(null); // the default init value of useRef() is 'undefined'.
 	const summary = useRef<HTMLInputElement>(null);
 
 	function handleSubmit(event: FormEvent<HTMLFormElement>) {
